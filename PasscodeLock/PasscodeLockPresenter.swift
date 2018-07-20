@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class PasscodeLockPresenter {
+open class PasscodeLockPresenter {
     
-    private var mainWindow: UIWindow?
+    fileprivate var mainWindow: UIWindow?
     
-    private lazy var passcodeLockWindow: UIWindow = {
+    fileprivate lazy var passcodeLockWindow: UIWindow = {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -22,9 +22,9 @@ public class PasscodeLockPresenter {
         return window
     }()
     
-    private let passcodeConfiguration: PasscodeLockConfigurationType
-    public var isPasscodePresented = false
-    public let passcodeLockVC: PasscodeLockViewController
+    fileprivate let passcodeConfiguration: PasscodeLockConfigurationType
+    open var isPasscodePresented = false
+    open let passcodeLockVC: PasscodeLockViewController
     
     public init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType, viewController: PasscodeLockViewController) {
         
@@ -42,7 +42,7 @@ public class PasscodeLockPresenter {
         self.init(mainWindow: window, configuration: configuration, viewController: passcodeLockVC)
     }
     
-    public func presentPasscodeLock() {
+    open func presentPasscodeLock() {
         
         guard passcodeConfiguration.repository.hasPasscode else { return }
         guard !isPasscodePresented else { return }
@@ -68,7 +68,7 @@ public class PasscodeLockPresenter {
         passcodeLockWindow.rootViewController = passcodeLockVC
     }
     
-    public func dismissPasscodeLock(animated: Bool = true) {
+    open func dismissPasscodeLock(animated: Bool = true) {
         
         isPasscodePresented = false
         mainWindow?.windowLevel = 1
