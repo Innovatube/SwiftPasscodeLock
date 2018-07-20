@@ -92,10 +92,10 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if shouldTryToAuthenticateWithBiometrics {
-        
+//        if shouldTryToAuthenticateWithBiometrics {
+
             authenticateWithBiometrics()
-        }
+//        }
     }
     
     internal func updatePasscodeView() {
@@ -119,7 +119,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     }
 
     @objc open func appWillEnterForegroundHandler(_ notification: Notification) {
-        authenticateWithTouchID()
+        passcodeLock.authenticateWithBiometrics()
     }
 
     @objc open func appDidEnterBackgroundHandler(_ notification: Notification) {
@@ -150,18 +150,19 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         passcodeLock.authenticateWithBiometrics()
     }
 
-    fileprivate func authenticateWithTouchID() {
-        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
-            passcodeLock.authenticateWithBiometrics()
-        }
-    }
-    
+//    fileprivate func authenticateWithTouchID() {
+//        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
+//            passcodeLock.authenticateWithBiometrics()
+//        }
+//    }
+
     private func authenticateWithBiometrics() {
-        
-        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
-            
-            passcodeLock.authenticateWithBiometrics()
-        }
+        passcodeLock.authenticateWithBiometrics()
+
+//        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
+//            
+//            passcodeLock.authenticateWithBiometrics()
+//        }
     }
     
     internal func dismissPasscodeLock(_ lock: PasscodeLockType, completionHandler: (() -> Void)? = nil) {
@@ -210,8 +211,17 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     internal func animatePlaceholders(_ placeholders: [PasscodeSignPlaceholderView], toState state: PasscodeSignPlaceholderView.State) {
         
         for placeholder in placeholders {
-            
-            placeholder.animateState(state)
+            switch state {
+            case .Active:
+                placeholder.animateState(state)
+                descriptionLabel?.text = ""
+            case .Error:
+                descriptionLabel?.text = "パスコードが合致しません"
+                descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
+            case .Inactive:
+                descriptionLabel?.text = "パスコードが合致しません"
+                placeholder.animateState(state)
+            }
         }
     }
     

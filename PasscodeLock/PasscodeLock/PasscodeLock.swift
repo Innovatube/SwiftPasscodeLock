@@ -65,18 +65,28 @@ public class PasscodeLock: PasscodeLockType {
     
     public func authenticateWithBiometrics() {
         
-        guard isTouchIDAllowed else { return }
+//        guard isTouchIDAllowed else { return }
         
         let context = LAContext()
-        let reason = localizedStringFor("PasscodeLockTouchIDReason", comment: "TouchID authentication reason")
+        var error: NSError?
 
-        context.localizedFallbackTitle = localizedStringFor("PasscodeLockTouchIDButton", comment: "TouchID authentication fallback button")
-        
-        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-            success, error in
-            
-            self.handleTouchIDResult(success)
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "ロックを解除"
+
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                [unowned self] (success, authenticationError) in
+                DispatchQueue.main.async {
+                    if success {
+                        self.handleTouchIDResult(success)
+                    } else {
+                        // error
+                    }
+                }
+            }
+        } else {
+            // no biometry
         }
+
     }
     
     fileprivate func handleTouchIDResult(_ success: Bool) {

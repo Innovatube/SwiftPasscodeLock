@@ -7,24 +7,27 @@
 */
 
 /* Enter Passcode State */
-"PasscodeLockEnterTitle" = "Enter Passcode";
-"PasscodeLockEnterDescription" = "Enter your passcode to proceed.";
+"PasscodeLockEnterTitle" = "確認のため、もう一度入力してください";
+"PasscodeLockEnterDescription" = "";
 
 /* Set Passcode State */
-"PasscodeLockSetTitle" = "Enter a Passcode";
-"PasscodeLockSetDescription" = "Choose your passcode.";
+"PasscodeLockSetTitle" = "確認のため、もう一度入力してください";
+"PasscodeLockSetDescription" = "";
 
 /* Confirm Passcode State */
-"PasscodeLockConfirmTitle" = "Confirm Passcode";
-"PasscodeLockConfirmDescription" = "Enter the passcode again.";
+//"PasscodeLockConfirmTitle" = "Confirm Passcode";
+"PasscodeLockConfirmTitle" = "確認のため、もう一度入力してください";
+"PasscodeLockConfirmDescription" = "";
 
 /* Change Passcode State */
-"PasscodeLockChangeTitle" = "Enter Old Passcode";
-"PasscodeLockChangeDescription" = "Enter your old passcode.";
+//"PasscodeLockChangeTitle" = "Enter Old Passcode";
+"PasscodeLockChangeTitle" = "確認のため、もう一度入力してください";
+"PasscodeLockChangeDescription" = "";
 
 /* Passcode Mismatch State */
-"PasscodeLockMismatchTitle" = "Try again";
-"PasscodeLockMismatchDescription" = "Passcodes didn\'t match.";
+//"PasscodeLockMismatchTitle" = "Try again";
+"PasscodeLockMismatchTitle" = "確認のため、もう一度入力してください";
+"PasscodeLockMismatchDescription" = "パスコードが合致しません";
 
 /* Touch ID Reason */
 "PasscodeLockTouchIDReason" = "Authentication required to proceed";

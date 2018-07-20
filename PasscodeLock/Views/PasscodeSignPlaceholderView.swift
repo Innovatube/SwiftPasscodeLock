@@ -63,7 +63,7 @@ public class PasscodeSignPlaceholderView: UIView {
         backgroundColor = inactiveColor
     }
     
-    private func colorsForState(_ state: State) -> (backgroundColor: UIColor, borderColor: UIColor) {
+    func colorsForState(_ state: State) -> (backgroundColor: UIColor, borderColor: UIColor) {
         
         switch state {
         case .Inactive: return (inactiveColor, activeColor)
