@@ -14,7 +14,7 @@ public class PasscodeLockPresenter {
     
     private lazy var passcodeLockWindow: UIWindow = {
         
-        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let window = UIWindow(frame: UIScreen.main.bounds)
         
         window.windowLevel = 0
         window.makeKeyAndVisible()
@@ -50,7 +50,7 @@ public class PasscodeLockPresenter {
         isPasscodePresented = true
         
         passcodeLockWindow.windowLevel = 2
-        passcodeLockWindow.hidden = false
+        passcodeLockWindow.isHidden = false
         
         mainWindow?.windowLevel = 1
         mainWindow?.endEditing(true)
@@ -68,14 +68,14 @@ public class PasscodeLockPresenter {
         passcodeLockWindow.rootViewController = passcodeLockVC
     }
     
-    public func dismissPasscodeLock(animated animated: Bool = true) {
+    public func dismissPasscodeLock(animated: Bool = true) {
         
         isPasscodePresented = false
         mainWindow?.windowLevel = 1
         mainWindow?.makeKeyAndVisible()
         
         if animated {
-        
+
             animatePasscodeLockDismissal()
             
         } else {
@@ -87,14 +87,13 @@ public class PasscodeLockPresenter {
     
     internal func animatePasscodeLockDismissal() {
         
-        UIView.animateWithDuration(
-            0.5,
+        UIView.animate(
+            withDuration: 0.5,
             delay: 0,
             usingSpringWithDamping: 1,
             initialSpringVelocity: 0,
-            options: [.CurveEaseInOut],
+            options: [.curveEaseInOut],
             animations: { [weak self] in
-                
                 self?.passcodeLockWindow.alpha = 0
             },
             completion: { [weak self] _ in

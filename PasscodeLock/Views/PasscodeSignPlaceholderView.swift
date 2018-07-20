@@ -18,21 +18,21 @@ public class PasscodeSignPlaceholderView: UIView {
     }
     
     @IBInspectable
-    public var inactiveColor: UIColor = UIColor.whiteColor() {
+    open var inactiveColor: UIColor = UIColor.white {
         didSet {
             setupView()
         }
     }
     
     @IBInspectable
-    public var activeColor: UIColor = UIColor.grayColor() {
+    open var activeColor: UIColor = UIColor.gray {
         didSet {
             setupView()
         }
     }
-    
+
     @IBInspectable
-    public var errorColor: UIColor = UIColor.redColor() {
+    open var errorColor: UIColor = UIColor.red {
         didSet {
             setupView()
         }
@@ -50,20 +50,20 @@ public class PasscodeSignPlaceholderView: UIView {
         super.init(coder: aDecoder)
     }
     
-    public override func intrinsicContentSize() -> CGSize {
-        
-        return CGSizeMake(16, 16)
+    open override var intrinsicContentSize : CGSize {
+
+        return CGSize(width: 16, height: 16)
     }
-    
+
     private func setupView() {
         
         layer.cornerRadius = 8
         layer.borderWidth = 1
-        layer.borderColor = activeColor.CGColor
+        layer.borderColor = activeColor.cgColor
         backgroundColor = inactiveColor
     }
     
-    private func colorsForState(state: State) -> (backgroundColor: UIColor, borderColor: UIColor) {
+    private func colorsForState(_ state: State) -> (backgroundColor: UIColor, borderColor: UIColor) {
         
         switch state {
         case .Inactive: return (inactiveColor, activeColor)
@@ -72,22 +72,22 @@ public class PasscodeSignPlaceholderView: UIView {
         }
     }
     
-    public func animateState(state: State) {
+    public func animateState(_ state: State) {
         
         let colors = colorsForState(state)
-        
-        UIView.animateWithDuration(
-            0.5,
+
+        UIView.animate(
+            withDuration: 0.5,
             delay: 0,
             usingSpringWithDamping: 1,
             initialSpringVelocity: 0,
             options: [],
             animations: {
-                
+
                 self.backgroundColor = colors.backgroundColor
-                self.layer.borderColor = colors.borderColor.CGColor
-                
-            },
+                self.layer.borderColor = colors.borderColor.cgColor
+
+        },
             completion: nil
         )
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let PasscodeLockIncorrectPasscodeNotification = "passcode.lock.incorrect.passcode.notification"
+public let PasscodeLockIncorrectPasscodeNotification = Notification.Name("passcode.lock.incorrect.passcode.notification")
 
 struct EnterPasscodeState: PasscodeLockStateType {
     
@@ -27,7 +27,7 @@ struct EnterPasscodeState: PasscodeLockStateType {
         description = localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description")
     }
     
-    mutating func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
+    mutating func acceptPasscode(_ passcode: [String], fromLock lock: PasscodeLockType) {
         
         guard let currentPasscode = lock.repository.passcode else {
             return
@@ -50,14 +50,12 @@ struct EnterPasscodeState: PasscodeLockStateType {
         }
     }
     
-    private mutating func postNotification() {
-        
+    fileprivate mutating func postNotification() {
+
         guard !isNotificationSent else { return }
-            
-        let center = NSNotificationCenter.defaultCenter()
-        
-        center.postNotificationName(PasscodeLockIncorrectPasscodeNotification, object: nil)
-        
+
+        NotificationCenter.default.post(name: PasscodeLockIncorrectPasscodeNotification, object: nil)
+
         isNotificationSent = true
     }
 }
