@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,10 +17,20 @@
                 <outlet property="cancelButton" destination="etg-x7-Mx1" id="ckg-NT-1rx"/>
                 <outlet property="deleteSignButton" destination="H78-kl-y6L" id="kHt-em-QUT"/>
                 <outlet property="descriptionLabel" destination="HbT-GO-CPk" id="gtS-ky-zzI"/>
+                <outlet property="eightBtn" destination="PbJ-Y8-MMf" id="a2p-RG-e1V"/>
+                <outlet property="fiveBtn" destination="C9Z-3u-ohd" id="08V-q1-2jO"/>
+                <outlet property="fourBtn" destination="RR4-5o-pli" id="9Tn-WE-gZj"/>
+                <outlet property="nineBtn" destination="EUD-XB-0CR" id="kTR-Nk-fld"/>
+                <outlet property="oneBtn" destination="cuq-ue-Jyj" id="KxG-LZ-fy2"/>
                 <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="8td-lh-XMA"/>
+                <outlet property="sevenBtn" destination="RA8-jd-dag" id="UD8-Tu-wsM"/>
+                <outlet property="sixBtn" destination="WDx-aD-wJK" id="WJq-xf-h3E"/>
+                <outlet property="threeBtn" destination="pLy-90-g1a" id="1NU-Eb-7EM"/>
                 <outlet property="titleLabel" destination="1wK-Ol-7mm" id="FOM-sv-dOO"/>
                 <outlet property="touchIDButton" destination="0Ph-dj-v7R" id="ifL-gW-Ttr"/>
+                <outlet property="twoBtn" destination="CGh-ph-49t" id="XA8-li-4Zp"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4dc-hJ-geg"/>
+                <outlet property="zeroBtn" destination="0CR-0R-0Nr" id="EiL-Rr-FJ7"/>
                 <outletCollection property="placeholders" destination="w14-Kb-Jnf" collectionClass="NSMutableArray" id="OYC-Bu-Hqb"/>
                 <outletCollection property="placeholders" destination="OSf-H5-f20" collectionClass="NSMutableArray" id="obm-Mr-bfV"/>
                 <outletCollection property="placeholders" destination="9Tg-dE-gH4" collectionClass="NSMutableArray" id="Ibn-yD-bTx"/>
@@ -44,13 +55,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
-                    <rect key="frame" x="118" y="247" width="140" height="20"/>
+                    <rect key="frame" x="101" y="247" width="174" height="28"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="30r-C5-FH4">
-                            <rect key="frame" x="0.0" y="0.0" width="140" height="20"/>
+                            <rect key="frame" x="0.0" y="0.0" width="174" height="28"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="28"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="w14-Kb-Jnf" secondAttribute="height" multiplier="1:1" id="NE6-DS-Fjw"/>
@@ -68,7 +79,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-H5-f20" userLabel="Placeholder 2" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                                    <rect key="frame" x="40" y="0.0" width="20" height="20"/>
+                                    <rect key="frame" x="48.5" y="0.0" width="28.5" height="28"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
@@ -83,7 +94,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tg-dE-gH4" userLabel="Placeholder 3" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                                    <rect key="frame" x="80" y="0.0" width="20" height="20"/>
+                                    <rect key="frame" x="97" y="0.0" width="28.5" height="28"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
@@ -98,7 +109,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-1e-Ysl" userLabel="Placeholder 4" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                                    <rect key="frame" x="120" y="0.0" width="20" height="20"/>
+                                    <rect key="frame" x="145.5" y="0.0" width="28.5" height="28"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
@@ -119,15 +130,19 @@
                     <constraints>
                         <constraint firstItem="30r-C5-FH4" firstAttribute="leading" secondItem="HcN-lo-9Jb" secondAttribute="leading" id="KvW-GH-QqB"/>
                         <constraint firstItem="30r-C5-FH4" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="StO-x0-tQX"/>
+                        <constraint firstAttribute="height" constant="28" id="cUA-MG-OKg"/>
                         <constraint firstAttribute="bottom" secondItem="30r-C5-FH4" secondAttribute="bottom" id="lB6-L7-6rp"/>
                         <constraint firstAttribute="trailing" secondItem="30r-C5-FH4" secondAttribute="trailing" id="xZZ-po-gHs"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="boa-fC-QE8">
-                    <rect key="frame" x="58" y="337.5" width="259.5" height="67"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="boa-fC-QE8">
+                    <rect key="frame" x="38" y="351" width="299" height="63.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-ue-Jyj" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="63.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="height" multiplier="1:1" id="BBb-qo-nO9"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="1">
                                 <color key="titleColor" red="0.45882352941176469" green="0.60392156862745094" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -152,7 +167,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-ph-49t" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="86.5" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="118" y="0.0" width="63.5" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="2">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -177,7 +192,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLy-90-g1a" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="173" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="235" y="0.0" width="64" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="3">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -202,6 +217,12 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="CGh-ph-49t" firstAttribute="height" secondItem="cuq-ue-Jyj" secondAttribute="height" id="1PM-jV-LaD"/>
+                        <constraint firstItem="pLy-90-g1a" firstAttribute="height" secondItem="CGh-ph-49t" secondAttribute="height" id="4yz-Ik-Xaz"/>
+                        <constraint firstItem="CGh-ph-49t" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="Fdh-ss-ywV"/>
+                        <constraint firstItem="pLy-90-g1a" firstAttribute="width" secondItem="CGh-ph-49t" secondAttribute="width" id="aef-6z-f1N"/>
+                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
                     <rect key="frame" x="140" y="625" width="96" height="26"/>
@@ -213,11 +234,11 @@
                         <action selector="touchIDButtonTap:" destination="-1" eventType="touchUpInside" id="MT9-Ev-GsW"/>
                     </connections>
                 </button>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D7y-KB-W4w">
-                    <rect key="frame" x="58" y="404.5" width="259.5" height="67"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D7y-KB-W4w">
+                    <rect key="frame" x="38" y="414.5" width="299" height="63.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-5o-pli" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="4">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -242,7 +263,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9Z-3u-ohd" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="86.5" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="117.5" y="0.0" width="64" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="5">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -267,7 +288,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-aD-wJK" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="173" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="235" y="0.0" width="64" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="6">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -292,12 +313,16 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="WDx-aD-wJK" firstAttribute="width" secondItem="C9Z-3u-ohd" secondAttribute="width" id="bDO-fD-9JO"/>
+                        <constraint firstItem="C9Z-3u-ohd" firstAttribute="width" secondItem="RR4-5o-pli" secondAttribute="width" id="bPT-65-Bg7"/>
+                    </constraints>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d6h-Ey-Nug">
-                    <rect key="frame" x="58" y="471.5" width="259.5" height="67"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d6h-Ey-Nug">
+                    <rect key="frame" x="38" y="478" width="299" height="63.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA8-jd-dag" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="7">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -322,7 +347,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbJ-Y8-MMf" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="86.5" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="117.5" y="0.0" width="64" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="8">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -347,7 +372,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-XB-0CR" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="173" y="0.0" width="86.5" height="67"/>
+                            <rect key="frame" x="235" y="0.0" width="64" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="9">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -372,14 +397,18 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="EUD-XB-0CR" firstAttribute="width" secondItem="PbJ-Y8-MMf" secondAttribute="width" id="Tb2-DG-brc"/>
+                        <constraint firstItem="PbJ-Y8-MMf" firstAttribute="width" secondItem="RA8-jd-dag" secondAttribute="width" id="qzr-nV-Bst"/>
+                    </constraints>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="z91-mL-1Bu">
-                    <rect key="frame" x="58" y="538.5" width="259.5" height="66.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="z91-mL-1Bu">
+                    <rect key="frame" x="38" y="541.5" width="299" height="63.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etg-x7-Mx1">
-                            <rect key="frame" x="0.0" y="0.0" width="66.5" height="66.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="8" height="63.5"/>
                             <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
-                            <state key="normal" title="Cancel">
+                            <state key="normal">
                                 <color key="titleColor" red="0.4549019608" green="0.59999999999999998" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -387,10 +416,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CR-0R-0Nr" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                            <rect key="frame" x="96.5" y="0.0" width="66.5" height="66.5"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="0CR-0R-0Nr" secondAttribute="height" multiplier="1:1" id="mvJ-46-Hsh"/>
-                            </constraints>
+                            <rect key="frame" x="117.5" y="0.0" width="64" height="63.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
                             <state key="normal" title="0">
                                 <color key="titleColor" red="0.45882352939999999" green="0.60392156860000001" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -415,9 +441,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L">
-                            <rect key="frame" x="193" y="0.0" width="66.5" height="66.5"/>
+                            <rect key="frame" x="291" y="0.0" width="8" height="63.5"/>
                             <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
-                            <state key="normal" title="Delete">
+                            <state key="normal">
                                 <color key="titleColor" red="0.45490196078431372" green="0.59999999999999998" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <state key="disabled">
@@ -432,35 +458,38 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="boa-fC-QE8" firstAttribute="height" secondItem="D7y-KB-W4w" secondAttribute="height" id="3Y3-qx-QKT"/>
+                <constraint firstAttribute="trailing" secondItem="boa-fC-QE8" secondAttribute="trailing" constant="38" id="4MY-Pi-o1X"/>
+                <constraint firstItem="d6h-Ey-Nug" firstAttribute="leading" secondItem="D7y-KB-W4w" secondAttribute="leading" id="5bW-Ew-4bM"/>
+                <constraint firstItem="D7y-KB-W4w" firstAttribute="leading" secondItem="boa-fC-QE8" secondAttribute="leading" id="713-RF-Ndb"/>
                 <constraint firstItem="D7y-KB-W4w" firstAttribute="top" secondItem="boa-fC-QE8" secondAttribute="bottom" id="7Wb-S2-FCz"/>
-                <constraint firstItem="D7y-KB-W4w" firstAttribute="height" secondItem="d6h-Ey-Nug" secondAttribute="height" id="8YY-BU-ZK6"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="186" id="8sa-mB-5BR"/>
+                <constraint firstItem="d6h-Ey-Nug" firstAttribute="height" secondItem="D7y-KB-W4w" secondAttribute="height" id="AsE-Zc-AvM"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-16" id="BIJ-v9-DKU"/>
-                <constraint firstItem="boa-fC-QE8" firstAttribute="trailing" secondItem="D7y-KB-W4w" secondAttribute="trailing" id="Dmt-2t-rhx"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="bottom" secondItem="HbT-GO-CPk" secondAttribute="top" constant="-4" id="F4T-j8-jQJ"/>
+                <constraint firstItem="z91-mL-1Bu" firstAttribute="trailing" secondItem="d6h-Ey-Nug" secondAttribute="trailing" id="FAF-Og-2lR"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FUQ-Nh-ox9"/>
-                <constraint firstItem="d6h-Ey-Nug" firstAttribute="leading" secondItem="z91-mL-1Bu" secondAttribute="leading" id="H2J-UY-OWD"/>
-                <constraint firstItem="z91-mL-1Bu" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1/10" id="Nbb-ag-Bpn"/>
+                <constraint firstItem="RA8-jd-dag" firstAttribute="width" secondItem="RR4-5o-pli" secondAttribute="width" id="HsY-0T-Q5I"/>
+                <constraint firstItem="z91-mL-1Bu" firstAttribute="leading" secondItem="d6h-Ey-Nug" secondAttribute="leading" id="JBp-Ys-Mxw"/>
+                <constraint firstItem="D7y-KB-W4w" firstAttribute="trailing" secondItem="boa-fC-QE8" secondAttribute="trailing" id="Lk7-0t-Rhj"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="bottom" secondItem="HcN-lo-9Jb" secondAttribute="top" constant="-16" id="OLY-LF-tHd"/>
+                <constraint firstItem="z91-mL-1Bu" firstAttribute="height" secondItem="d6h-Ey-Nug" secondAttribute="height" id="Oic-Gn-fuJ"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Qup-3g-Gux"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="RDw-W3-MpZ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RgV-eT-vCl"/>
-                <constraint firstItem="boa-fC-QE8" firstAttribute="leading" secondItem="D7y-KB-W4w" secondAttribute="leading" id="S97-Sb-dtV"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="STC-Oe-YVu"/>
-                <constraint firstItem="D7y-KB-W4w" firstAttribute="leading" secondItem="d6h-Ey-Nug" secondAttribute="leading" id="TpE-1H-T91"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VMo-hv-2qR"/>
                 <constraint firstItem="HcN-lo-9Jb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wqo-IM-yCU"/>
+                <constraint firstItem="0CR-0R-0Nr" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="aWs-el-jMN"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="bR1-VP-TdA"/>
-                <constraint firstItem="d6h-Ey-Nug" firstAttribute="height" secondItem="z91-mL-1Bu" secondAttribute="height" id="c0w-mL-Wqg"/>
-                <constraint firstItem="D7y-KB-W4w" firstAttribute="trailing" secondItem="d6h-Ey-Nug" secondAttribute="trailing" id="dLS-FI-v2Q"/>
-                <constraint firstItem="HcN-lo-9Jb" firstAttribute="height" secondItem="boa-fC-QE8" secondAttribute="height" multiplier="0.3" id="hb6-Mv-VwG"/>
+                <constraint firstItem="D7y-KB-W4w" firstAttribute="height" secondItem="boa-fC-QE8" secondAttribute="height" id="fsg-db-dMi"/>
+                <constraint firstItem="boa-fC-QE8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="h13-72-IoD"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
-                <constraint firstItem="d6h-Ey-Nug" firstAttribute="trailing" secondItem="z91-mL-1Bu" secondAttribute="trailing" id="kYZ-dN-GeV"/>
                 <constraint firstItem="z91-mL-1Bu" firstAttribute="top" secondItem="d6h-Ey-Nug" secondAttribute="bottom" id="s7y-BJ-4ez"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="top" secondItem="z91-mL-1Bu" secondAttribute="bottom" constant="20" id="sMj-s6-zwJ"/>
                 <constraint firstItem="d6h-Ey-Nug" firstAttribute="top" secondItem="D7y-KB-W4w" secondAttribute="bottom" id="t0W-6v-wwt"/>
-                <constraint firstItem="z91-mL-1Bu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="v8k-xu-w0E"/>
+                <constraint firstItem="cuq-ue-Jyj" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="64:375" id="wQN-le-0vW"/>
+                <constraint firstItem="d6h-Ey-Nug" firstAttribute="trailing" secondItem="D7y-KB-W4w" secondAttribute="trailing" id="wx1-FC-Moq"/>
+                <constraint firstItem="RR4-5o-pli" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="zZ5-2X-szh"/>
             </constraints>
             <point key="canvasLocation" x="191" y="485"/>
         </view>

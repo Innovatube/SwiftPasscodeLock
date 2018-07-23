@@ -34,6 +34,18 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     @IBOutlet public weak var deleteSignButton: UIButton?
     @IBOutlet public weak var touchIDButton: UIButton?
     @IBOutlet public weak var placeholdersX: NSLayoutConstraint?
+
+    @IBOutlet weak var oneBtn: PasscodeSignButton!
+    @IBOutlet weak var twoBtn: PasscodeSignButton!
+    @IBOutlet weak var threeBtn: PasscodeSignButton!
+    @IBOutlet weak var fourBtn: PasscodeSignButton!
+    @IBOutlet weak var fiveBtn: PasscodeSignButton!
+    @IBOutlet weak var sixBtn: PasscodeSignButton!
+    @IBOutlet weak var sevenBtn: PasscodeSignButton!
+    @IBOutlet weak var eightBtn: PasscodeSignButton!
+    @IBOutlet weak var nineBtn: PasscodeSignButton!
+    @IBOutlet weak var zeroBtn: PasscodeSignButton!
+
     
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
     public var dismissCompletionCallback: (()->Void)?
@@ -85,7 +97,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         
         updatePasscodeView()
         deleteSignButton?.isEnabled = false
-        
+        configureUI()
         setupEvents()
     }
     
@@ -125,6 +137,20 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     @objc open func appDidEnterBackgroundHandler(_ notification: Notification) {
         shouldTryToAuthenticateWithBiometrics = false
     }
+
+    internal func configureUI() {
+            oneBtn.borderRadius = oneBtn.bounds.height / 2
+            twoBtn.borderRadius = twoBtn.bounds.height / 2
+            threeBtn.borderRadius = threeBtn.bounds.height / 2
+            fourBtn.borderRadius = fourBtn.bounds.height / 2
+            fiveBtn.borderRadius = fiveBtn.bounds.height / 2
+            sixBtn.borderRadius = sixBtn.bounds.height / 2
+            sevenBtn.borderRadius = sevenBtn.bounds.height / 2
+            eightBtn.borderRadius = eightBtn.bounds.height / 2
+            nineBtn.borderRadius = nineBtn.bounds.height / 2
+            zeroBtn.borderRadius = zeroBtn.bounds.height / 2
+    }
+
 
     // MARK: - Actions
     
