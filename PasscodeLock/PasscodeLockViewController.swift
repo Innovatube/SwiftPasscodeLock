@@ -214,7 +214,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     // MARK: - Animations
     
     internal func animateWrongPassword() {
-        
+        descriptionLabel?.text = "パスコードが合致しません"
+        descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
+
         deleteSignButton?.isEnabled = false
         isPlaceholdersAnimationCompleted = false
         
@@ -242,17 +244,19 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     internal func animatePlaceholders(_ placeholders: [PasscodeSignPlaceholderView], toState state: PasscodeSignPlaceholderView.State) {
         
         for placeholder in placeholders {
-            switch state {
-            case .Active:
-                placeholder.animateState(state)
-                descriptionLabel?.text = ""
-            case .Error:
-                descriptionLabel?.text = "パスコードが合致しません"
-                descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
-                placeholder.animateState(state)
-            case .Inactive:
-                placeholder.animateState(state)
-            }
+            placeholder.animateState(state)
+
+//            switch state {
+//            case .Active:
+//                placeholder.animateState(state)
+//                descriptionLabel?.text = ""
+//            case .Error:
+//                descriptionLabel?.text = "パスコードが合致しません"
+//                descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
+//                placeholder.animateState(state)
+//            case .Inactive:
+//                placeholder.animateState(state)
+//            }
         }
     }
     

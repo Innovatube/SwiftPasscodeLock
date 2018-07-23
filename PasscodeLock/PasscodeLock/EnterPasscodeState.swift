@@ -13,7 +13,7 @@ public let PasscodeLockIncorrectPasscodeNotification = Notification.Name("passco
 struct EnterPasscodeState: PasscodeLockStateType {
     
     let title: String
-    let description: String
+    var description: String
     let isCancellableAction: Bool
     var isTouchIDAllowed = true
     
@@ -45,7 +45,6 @@ struct EnterPasscodeState: PasscodeLockStateType {
                 
                 postNotification()
             }
-            
             lock.delegate?.passcodeLockDidFail(lock)
         }
     }

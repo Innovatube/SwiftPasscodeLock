@@ -9,6 +9,9 @@
 /* Enter Passcode State */
 "PasscodeLockEnterTitle" = "確認のため、もう一度入力してください";
 "PasscodeLockEnterDescription" = "";
+//                descriptionLabel?.text = "パスコードが合致しません"
+//                descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
+
 
 /* Set Passcode State */
 "PasscodeLockSetTitle" = "確認のため、もう一度入力してください";

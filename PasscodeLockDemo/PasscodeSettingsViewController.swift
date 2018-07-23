@@ -77,7 +77,7 @@ class PasscodeSettingsViewController: UIViewController {
         let repo = UserDefaultsPasscodeRepository()
         let config = PasscodeLockConfiguration(repository: repo)
         
-        let passcodeLock = PasscodeLockViewController(state: .ChangePasscode, configuration: config)
+        let passcodeLock = PasscodeLockViewController(state: .SetPasscode, configuration: config)
         
         present(passcodeLock, animated: true, completion: nil)
     }
