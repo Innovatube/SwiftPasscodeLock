@@ -37,14 +37,16 @@ public class PasscodeLock: PasscodeLockType {
         self.configuration = configuration
     }
     
-    public func addSign(_ sign: String) {
-        
+    open func addSign(_ sign: String) {
+
         passcode.append(sign)
         delegate?.passcodeLock(self, addedSignAtIndex: passcode.count - 1)
-        
+
         if passcode.count >= configuration.passcodeLength {
-            
-            lockState.acceptPasscode(passcode, fromLock: self)
+
+            // handles "requires exclusive access" error at Swift 4
+            var lockStateCopy = lockState
+            lockStateCopy.acceptPasscode(passcode, fromLock: self)
             passcode.removeAll(keepingCapacity: true)
         }
     }
