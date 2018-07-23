@@ -211,6 +211,11 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         } else {
             // if pushed in a navigation controller
             _ = navigationController?.popViewController(animated: animateOnDismiss)
+            //dismiss if present with navigation controller
+            dismiss(animated: animateOnDismiss) { [weak self] in
+                self?.dismissCompletionCallback?()
+                completionHandler?()
+            }
         }
         dismissCompletionCallback?()
         completionHandler?()
