@@ -55,16 +55,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
-                    <rect key="frame" x="101" y="247" width="174" height="28"/>
+                    <rect key="frame" x="129" y="247" width="118" height="14"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="30r-C5-FH4">
-                            <rect key="frame" x="0.0" y="0.0" width="174" height="28"/>
+                            <rect key="frame" x="0.0" y="0.0" width="118" height="14"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="28.5" height="28"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="14.5" height="14"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="w14-Kb-Jnf" secondAttribute="height" multiplier="1:1" id="NE6-DS-Fjw"/>
+                                        <constraint firstAttribute="height" constant="14" id="qRJ-wg-MZd"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
@@ -79,7 +80,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-H5-f20" userLabel="Placeholder 2" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                                    <rect key="frame" x="48.5" y="0.0" width="28.5" height="28"/>
+                                    <rect key="frame" x="34.5" y="0.0" width="14.5" height="14"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
@@ -94,7 +95,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tg-dE-gH4" userLabel="Placeholder 3" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                                    <rect key="frame" x="97" y="0.0" width="28.5" height="28"/>
+                                    <rect key="frame" x="69" y="0.0" width="14.5" height="14"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
@@ -109,7 +110,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-1e-Ysl" userLabel="Placeholder 4" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                                    <rect key="frame" x="145.5" y="0.0" width="28.5" height="28"/>
+                                    <rect key="frame" x="103.5" y="0.0" width="14.5" height="14"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
@@ -130,13 +131,12 @@
                     <constraints>
                         <constraint firstItem="30r-C5-FH4" firstAttribute="leading" secondItem="HcN-lo-9Jb" secondAttribute="leading" id="KvW-GH-QqB"/>
                         <constraint firstItem="30r-C5-FH4" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="StO-x0-tQX"/>
-                        <constraint firstAttribute="height" constant="28" id="cUA-MG-OKg"/>
                         <constraint firstAttribute="bottom" secondItem="30r-C5-FH4" secondAttribute="bottom" id="lB6-L7-6rp"/>
                         <constraint firstAttribute="trailing" secondItem="30r-C5-FH4" secondAttribute="trailing" id="xZZ-po-gHs"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="boa-fC-QE8">
-                    <rect key="frame" x="38" y="351" width="299" height="63.5"/>
+                    <rect key="frame" x="38" y="327" width="299" height="63.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-ue-Jyj" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="64" height="63.5"/>
@@ -235,7 +235,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D7y-KB-W4w">
-                    <rect key="frame" x="38" y="414.5" width="299" height="63.5"/>
+                    <rect key="frame" x="38" y="398.5" width="299" height="63.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-5o-pli" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="64" height="63.5"/>
@@ -319,7 +319,7 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d6h-Ey-Nug">
-                    <rect key="frame" x="38" y="478" width="299" height="63.5"/>
+                    <rect key="frame" x="38" y="470" width="299" height="63.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA8-jd-dag" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="64" height="63.5"/>
@@ -461,7 +461,7 @@
                 <constraint firstAttribute="trailing" secondItem="boa-fC-QE8" secondAttribute="trailing" constant="38" id="4MY-Pi-o1X"/>
                 <constraint firstItem="d6h-Ey-Nug" firstAttribute="leading" secondItem="D7y-KB-W4w" secondAttribute="leading" id="5bW-Ew-4bM"/>
                 <constraint firstItem="D7y-KB-W4w" firstAttribute="leading" secondItem="boa-fC-QE8" secondAttribute="leading" id="713-RF-Ndb"/>
-                <constraint firstItem="D7y-KB-W4w" firstAttribute="top" secondItem="boa-fC-QE8" secondAttribute="bottom" id="7Wb-S2-FCz"/>
+                <constraint firstItem="D7y-KB-W4w" firstAttribute="top" secondItem="boa-fC-QE8" secondAttribute="bottom" constant="8" id="7Wb-S2-FCz"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="186" id="8sa-mB-5BR"/>
                 <constraint firstItem="d6h-Ey-Nug" firstAttribute="height" secondItem="D7y-KB-W4w" secondAttribute="height" id="AsE-Zc-AvM"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-16" id="BIJ-v9-DKU"/>
@@ -484,9 +484,9 @@
                 <constraint firstItem="D7y-KB-W4w" firstAttribute="height" secondItem="boa-fC-QE8" secondAttribute="height" id="fsg-db-dMi"/>
                 <constraint firstItem="boa-fC-QE8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="h13-72-IoD"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
-                <constraint firstItem="z91-mL-1Bu" firstAttribute="top" secondItem="d6h-Ey-Nug" secondAttribute="bottom" id="s7y-BJ-4ez"/>
+                <constraint firstItem="z91-mL-1Bu" firstAttribute="top" secondItem="d6h-Ey-Nug" secondAttribute="bottom" constant="8" id="s7y-BJ-4ez"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="top" secondItem="z91-mL-1Bu" secondAttribute="bottom" constant="20" id="sMj-s6-zwJ"/>
-                <constraint firstItem="d6h-Ey-Nug" firstAttribute="top" secondItem="D7y-KB-W4w" secondAttribute="bottom" id="t0W-6v-wwt"/>
+                <constraint firstItem="d6h-Ey-Nug" firstAttribute="top" secondItem="D7y-KB-W4w" secondAttribute="bottom" constant="8" id="t0W-6v-wwt"/>
                 <constraint firstItem="cuq-ue-Jyj" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="64:375" id="wQN-le-0vW"/>
                 <constraint firstItem="d6h-Ey-Nug" firstAttribute="trailing" secondItem="D7y-KB-W4w" secondAttribute="trailing" id="wx1-FC-Moq"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="zZ5-2X-szh"/>

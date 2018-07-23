@@ -97,8 +97,12 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         
         updatePasscodeView()
         deleteSignButton?.isEnabled = false
-        configureUI()
         setupEvents()
+    }
+
+    public override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        configureUI()
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -107,6 +111,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
 //        if shouldTryToAuthenticateWithBiometrics {
 
             authenticateWithBiometrics()
+
 //        }
     }
     
@@ -139,6 +144,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     }
 
     internal func configureUI() {
+        print("aaaaa + \(oneBtn.bounds.height)")
             oneBtn.borderRadius = oneBtn.bounds.height / 2
             twoBtn.borderRadius = twoBtn.bounds.height / 2
             threeBtn.borderRadius = threeBtn.bounds.height / 2
