@@ -15,6 +15,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         case SetPasscode
         case ChangePasscode
         case RemovePasscode
+        case ResetPasscode
         
         func getState() -> PasscodeLockStateType {
             
@@ -23,6 +24,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
             case .SetPasscode: return SetPasscodeState()
             case .ChangePasscode: return ChangePasscodeState()
             case .RemovePasscode: return EnterPasscodeState(allowCancellation: true)
+            case .ResetPasscode: return ResetPasscodeState()
             }
         }
     }
@@ -180,6 +182,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         
         passcodeLock.authenticateWithBiometrics()
     }
+    @IBAction func resetPassword(_ sender: UIButton) {
+        passcodeLockResetPass()
+    }
 
     //    fileprivate func authenticateWithTouchID() {
     //        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
@@ -294,4 +299,13 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
             deleteSignButton?.isEnabled = false
         }
     }
+
+    public func passcodeLockResetPass() {
+        let alert = UIAlertController(title: "パスコードを忘れた場合は\nアプリを削除して再インストール\nしてください。\n", message: "そのあとログインIDとパスワードで\nログインしていただけば過去のデータを\n維持したままご利用を再開できます。", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "はい", style: .cancel, handler: nil))
+
+        present(alert, animated: true, completion: nil)
+
+    }
+
 }

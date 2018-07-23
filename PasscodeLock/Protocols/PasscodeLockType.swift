@@ -20,6 +20,7 @@ public protocol PasscodeLockType {
     func removeSign()
     func changeStateTo(_ state: PasscodeLockStateType)
     func authenticateWithBiometrics()
+
 }
 
 public protocol PasscodeLockTypeDelegate: class {
@@ -27,6 +28,7 @@ public protocol PasscodeLockTypeDelegate: class {
     func passcodeLockDidSucceed(_ lock: PasscodeLockType)
     func passcodeLockDidFail(_ lock: PasscodeLockType)
     func passcodeLockDidChangeState(_ lock: PasscodeLockType)
+    func passcodeLockResetPass()
     func passcodeLock(_ lock: PasscodeLockType, addedSignAtIndex index: Int)
     func passcodeLock(_ lock: PasscodeLockType, removedSignAtIndex index: Int)
 }

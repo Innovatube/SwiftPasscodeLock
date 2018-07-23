@@ -14,7 +14,7 @@ public enum PasscodeError: Error {
 }
 
 class UserDefaultsPasscodeRepository: PasscodeRepositoryType {
-    
+
     private let passcodeKey = "passcode.lock.passcode"
     
     private lazy var defaults: UserDefaults = {
@@ -45,6 +45,7 @@ class UserDefaultsPasscodeRepository: PasscodeRepositoryType {
     func check(passcode: [String]) -> Bool {
         return self.passcode == passcode
     }
+    func resetPasscode() {}
     
     func deletePasscode() {
         

@@ -10,6 +10,7 @@ import Foundation
 import LocalAuthentication
 
 public class PasscodeLock: PasscodeLockType {
+
     
     public weak var delegate: PasscodeLockTypeDelegate?
     public let configuration: PasscodeLockConfigurationType
@@ -50,7 +51,7 @@ public class PasscodeLock: PasscodeLockType {
             passcode.removeAll(keepingCapacity: true)
         }
     }
-    
+
     public func removeSign() {
         
         guard passcode.count > 0 else { return }
