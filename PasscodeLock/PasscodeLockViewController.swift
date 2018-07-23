@@ -206,9 +206,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         } else {
             // if pushed in a navigation controller
             _ = navigationController?.popViewController(animated: animateOnDismiss)
-            dismissCompletionCallback?()
-            completionHandler?()
         }
+        dismissCompletionCallback?()
+        completionHandler?()
     }
     
     // MARK: - Animations
@@ -245,18 +245,6 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         
         for placeholder in placeholders {
             placeholder.animateState(state)
-
-//            switch state {
-//            case .Active:
-//                placeholder.animateState(state)
-//                descriptionLabel?.text = ""
-//            case .Error:
-//                descriptionLabel?.text = "パスコードが合致しません"
-//                descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
-//                placeholder.animateState(state)
-//            case .Inactive:
-//                placeholder.animateState(state)
-//            }
         }
     }
     
