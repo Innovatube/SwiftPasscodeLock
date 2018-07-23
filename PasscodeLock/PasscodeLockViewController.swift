@@ -108,11 +108,11 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        if shouldTryToAuthenticateWithBiometrics {
+        //        if shouldTryToAuthenticateWithBiometrics {
 
-            authenticateWithBiometrics()
+        authenticateWithBiometrics()
 
-//        }
+        //        }
     }
     
     internal func updatePasscodeView() {
@@ -144,17 +144,16 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     }
 
     internal func configureUI() {
-        print("aaaaa + \(oneBtn.bounds.height)")
-            oneBtn.borderRadius = oneBtn.bounds.height / 2
-            twoBtn.borderRadius = twoBtn.bounds.height / 2
-            threeBtn.borderRadius = threeBtn.bounds.height / 2
-            fourBtn.borderRadius = fourBtn.bounds.height / 2
-            fiveBtn.borderRadius = fiveBtn.bounds.height / 2
-            sixBtn.borderRadius = sixBtn.bounds.height / 2
-            sevenBtn.borderRadius = sevenBtn.bounds.height / 2
-            eightBtn.borderRadius = eightBtn.bounds.height / 2
-            nineBtn.borderRadius = nineBtn.bounds.height / 2
-            zeroBtn.borderRadius = zeroBtn.bounds.height / 2
+        oneBtn.borderRadius = oneBtn.bounds.height / 2
+        twoBtn.borderRadius = twoBtn.bounds.height / 2
+        threeBtn.borderRadius = threeBtn.bounds.height / 2
+        fourBtn.borderRadius = fourBtn.bounds.height / 2
+        fiveBtn.borderRadius = fiveBtn.bounds.height / 2
+        sixBtn.borderRadius = sixBtn.bounds.height / 2
+        sevenBtn.borderRadius = sevenBtn.bounds.height / 2
+        eightBtn.borderRadius = eightBtn.bounds.height / 2
+        nineBtn.borderRadius = nineBtn.bounds.height / 2
+        zeroBtn.borderRadius = zeroBtn.bounds.height / 2
     }
 
 
@@ -182,19 +181,19 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         passcodeLock.authenticateWithBiometrics()
     }
 
-//    fileprivate func authenticateWithTouchID() {
-//        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
-//            passcodeLock.authenticateWithBiometrics()
-//        }
-//    }
+    //    fileprivate func authenticateWithTouchID() {
+    //        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
+    //            passcodeLock.authenticateWithBiometrics()
+    //        }
+    //    }
 
     private func authenticateWithBiometrics() {
         passcodeLock.authenticateWithBiometrics()
 
-//        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
-//            
-//            passcodeLock.authenticateWithBiometrics()
-//        }
+        //        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
+        //
+        //            passcodeLock.authenticateWithBiometrics()
+        //        }
     }
     
     internal func dismissPasscodeLock(_ lock: PasscodeLockType, completionHandler: (() -> Void)? = nil) {
@@ -250,8 +249,8 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
             case .Error:
                 descriptionLabel?.text = "パスコードが合致しません"
                 descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
+                placeholder.animateState(state)
             case .Inactive:
-                descriptionLabel?.text = "パスコードが合致しません"
                 placeholder.animateState(state)
             }
         }
