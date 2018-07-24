@@ -47,6 +47,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     @IBOutlet weak var eightBtn: PasscodeSignButton!
     @IBOutlet weak var nineBtn: PasscodeSignButton!
     @IBOutlet weak var zeroBtn: PasscodeSignButton!
+    @IBOutlet weak var resetBtn: UIButton!
 
     
     open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
@@ -110,11 +111,11 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //        if shouldTryToAuthenticateWithBiometrics {
+        if shouldTryToAuthenticateWithBiometrics {
 
-        authenticateWithBiometrics()
+            authenticateWithBiometrics()
 
-        //        }
+        }
     }
     
     internal func updatePasscodeView() {
@@ -123,6 +124,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         descriptionLabel?.text = passcodeLock.state.description
         cancelButton?.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
+        resetBtn?.isHidden = passcodeLock.isAllowReset
     }
     
     // MARK: - Events
@@ -186,19 +188,19 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         passcodeLockResetPass()
     }
 
-    //    fileprivate func authenticateWithTouchID() {
-    //        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
-    //            passcodeLock.authenticateWithBiometrics()
-    //        }
-    //    }
+        fileprivate func authenticateWithTouchID() {
+            if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
+                passcodeLock.authenticateWithBiometrics()
+            }
+        }
 
     private func authenticateWithBiometrics() {
-        passcodeLock.authenticateWithBiometrics()
+//        passcodeLock.authenticateWithBiometrics()
 
-        //        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
-        //
-        //            passcodeLock.authenticateWithBiometrics()
-        //        }
+        if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
+
+            passcodeLock.authenticateWithBiometrics()
+        }
     }
     
     internal func dismissPasscodeLock(_ lock: PasscodeLockType, completionHandler: (() -> Void)? = nil) {

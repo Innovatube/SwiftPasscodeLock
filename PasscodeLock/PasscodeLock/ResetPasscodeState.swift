@@ -8,6 +8,8 @@
 
 import Foundation
 struct ResetPasscodeState: PasscodeLockStateType {
+    var isAllowReset: Bool = true
+
     var isCancellableAction: Bool = true
     
     var isTouchIDAllowed: Bool = false

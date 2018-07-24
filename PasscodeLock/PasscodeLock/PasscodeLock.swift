@@ -10,8 +10,6 @@ import Foundation
 import LocalAuthentication
 
 public class PasscodeLock: PasscodeLockType {
-
-    
     public weak var delegate: PasscodeLockTypeDelegate?
     public let configuration: PasscodeLockConfigurationType
     
@@ -26,6 +24,11 @@ public class PasscodeLock: PasscodeLockType {
     public var isTouchIDAllowed: Bool {
         return isTouchIDEnabled() && configuration.isTouchIDAllowed && lockState.isTouchIDAllowed
     }
+
+    public var isAllowReset: Bool {
+        return configuration.isAllowReset && lockState.isAllowReset
+    }
+
     
     private var lockState: PasscodeLockStateType
     private lazy var passcode = [String]()

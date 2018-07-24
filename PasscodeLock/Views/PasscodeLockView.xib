@@ -406,9 +406,9 @@
                     <rect key="frame" x="38" y="541.5" width="299" height="63.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etg-x7-Mx1">
-                            <rect key="frame" x="0.0" y="0.0" width="8" height="63.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="63.5"/>
                             <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
-                            <state key="normal">
+                            <state key="normal" title="    ">
                                 <color key="titleColor" red="0.4549019608" green="0.59999999999999998" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
@@ -441,9 +441,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L">
-                            <rect key="frame" x="291" y="0.0" width="8" height="63.5"/>
+                            <rect key="frame" x="235" y="0.0" width="64" height="63.5"/>
                             <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
-                            <state key="normal">
+                            <state key="normal" title="Delete">
                                 <color key="titleColor" red="0.45490196078431372" green="0.59999999999999998" blue="0.89411764705882357" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <state key="disabled">
@@ -454,9 +454,13 @@
                             </connections>
                         </button>
                     </subviews>
+                    <constraints>
+                        <constraint firstItem="etg-x7-Mx1" firstAttribute="width" secondItem="0CR-0R-0Nr" secondAttribute="width" id="Epw-dZ-oYL"/>
+                        <constraint firstItem="H78-kl-y6L" firstAttribute="width" secondItem="0CR-0R-0Nr" secondAttribute="width" id="z0B-Sl-3i5"/>
+                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gg2-g3-xWk">
-                    <rect key="frame" x="295" y="118" width="39" height="30"/>
+                    <rect key="frame" x="168" y="277" width="39" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Reset"/>
                     <connections>

@@ -16,7 +16,8 @@ struct EnterPasscodeState: PasscodeLockStateType {
     var description: String
     let isCancellableAction: Bool
     var isTouchIDAllowed = true
-    
+    var isAllowReset: Bool = true
+
     private var inccorectPasscodeAttempts = 0
     private var isNotificationSent = false
     
