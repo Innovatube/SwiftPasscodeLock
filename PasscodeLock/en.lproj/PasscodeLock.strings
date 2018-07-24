@@ -1,25 +1,14 @@
-/* 
-  PasscodeLock.strings
-  PasscodeLock
-
-  Created by Yanko Dimitrov on 8/28/15.
-  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
-*/
-
 /* Enter Passcode State */
-"PasscodeLockEnterTitle" = "確認のため、もう一度入力してください";
+"PasscodeLockEnterTitle" = "パスコードを入力してください";
 "PasscodeLockEnterDescription" = "";
-//                descriptionLabel?.text = "パスコードが合致しません"
-//                descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
-
 
 /* Set Passcode State */
-"PasscodeLockSetTitle" = "確認のため、もう一度入力してください";
+"PasscodeLockSetTitle" = "新しいパスコードを入力してください";
 "PasscodeLockSetDescription" = "";
 
 /* Confirm Passcode State */
 //"PasscodeLockConfirmTitle" = "Confirm Passcode";
-"PasscodeLockConfirmTitle" = "確認のため、もう一度入力してください";
+"PasscodeLockConfirmTitle" = "パスコードを入力してください";
 "PasscodeLockConfirmDescription" = "";
 
 /* Change Passcode State */
@@ -36,4 +25,4 @@
 "PasscodeLockTouchIDReason" = "Authentication required to proceed";
 
 /* Touch ID Fallback Button */
-"PasscodeLockTouchIDButton" = "Enter Passcode";
+"PasscodeLockTouchIDButton" = "ロックを解除";
