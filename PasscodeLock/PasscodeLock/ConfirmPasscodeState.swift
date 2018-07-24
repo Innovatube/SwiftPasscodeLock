@@ -9,7 +9,7 @@
 import Foundation
 
 struct ConfirmPasscodeState: PasscodeLockStateType {
-    var isAllowReset: Bool = false
+    var isAllowReset: Bool = true
     let title: String
     let description: String
     let isCancellableAction = true

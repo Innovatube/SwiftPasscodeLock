@@ -23,6 +23,7 @@
                 <outlet property="nineBtn" destination="EUD-XB-0CR" id="kTR-Nk-fld"/>
                 <outlet property="oneBtn" destination="cuq-ue-Jyj" id="KxG-LZ-fy2"/>
                 <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="8td-lh-XMA"/>
+                <outlet property="resetBtn" destination="Gg2-g3-xWk" id="ncZ-v6-VOy"/>
                 <outlet property="sevenBtn" destination="RA8-jd-dag" id="UD8-Tu-wsM"/>
                 <outlet property="sixBtn" destination="WDx-aD-wJK" id="WJq-xf-h3E"/>
                 <outlet property="threeBtn" destination="pLy-90-g1a" id="1NU-Eb-7EM"/>

@@ -124,7 +124,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         descriptionLabel?.text = passcodeLock.state.description
         cancelButton?.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
-        resetBtn?.isHidden = passcodeLock.isAllowReset
+        resetBtn?.isHidden = !passcodeLock.isAllowReset
     }
     
     // MARK: - Events

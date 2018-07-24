@@ -14,7 +14,7 @@ struct ChangePasscodeState: PasscodeLockStateType {
     let description: String
     let isCancellableAction = true
     var isTouchIDAllowed = false
-    var isAllowReset: Bool = false
+    var isAllowReset: Bool = true
     
     init() {
         
