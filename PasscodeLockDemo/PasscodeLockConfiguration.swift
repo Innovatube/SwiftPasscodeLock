@@ -16,7 +16,7 @@ struct PasscodeLockConfiguration: PasscodeLockConfigurationType {
     var isTouchIDAllowed = true
     let shouldRequestTouchIDImmediately = true
     let maximumInccorectPasscodeAttempts = -1
-    var isAllowReset: Bool = false
+    var isAllowReset: Bool = true
 
     init(repository: PasscodeRepositoryType) {
         

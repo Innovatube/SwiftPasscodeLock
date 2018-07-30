@@ -21,6 +21,7 @@ public protocol PasscodeLockType {
     func removeSign()
     func changeStateTo(_ state: PasscodeLockStateType)
     func authenticateWithBiometrics()
+    func removePasscodeLock()
 
 }
 

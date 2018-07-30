@@ -23,7 +23,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
             case .EnterPasscode: return EnterPasscodeState()
             case .SetPasscode: return SetPasscodeState()
             case .ChangePasscode: return ChangePasscodeState()
-            case .RemovePasscode: return EnterPasscodeState(allowCancellation: true)
+            case .RemovePasscode: return RemovePasscodeState(allowCancellation: true)
             case .ResetPasscode: return ResetPasscodeState()
             }
         }
@@ -278,6 +278,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         }
     }
 
+    public func removePasscodeLock() {
+        passcodeLock.removePasscodeLock()
+    }
     
     public func passcodeLockDidFail(_ lock: PasscodeLockType) {
         

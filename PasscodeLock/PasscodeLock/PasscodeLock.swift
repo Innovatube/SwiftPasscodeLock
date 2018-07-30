@@ -28,7 +28,6 @@ public class PasscodeLock: PasscodeLockType {
     public var isAllowReset: Bool {
         return configuration.isAllowReset && lockState.isAllowReset
     }
-
     
     private var lockState: PasscodeLockStateType
     private lazy var passcode = [String]()
@@ -61,6 +60,10 @@ public class PasscodeLock: PasscodeLockType {
         
         passcode.removeLast()
         delegate?.passcodeLock(self, removedSignAtIndex: passcode.count)
+    }
+
+    public func removePasscodeLock() {
+        repository.deletePasscode()
     }
     
     public func changeStateTo(_ state: PasscodeLockStateType) {
