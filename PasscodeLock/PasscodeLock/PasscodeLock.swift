@@ -10,6 +10,7 @@ import Foundation
 import LocalAuthentication
 
 public class PasscodeLock: PasscodeLockType {
+
     public weak var delegate: PasscodeLockTypeDelegate?
     public let configuration: PasscodeLockConfigurationType
     
@@ -64,6 +65,10 @@ public class PasscodeLock: PasscodeLockType {
 
     public func removePasscodeLock() {
         repository.deletePasscode()
+    }
+
+    public func resetPassword() {
+        repository.resetPasscode()
     }
     
     public func changeStateTo(_ state: PasscodeLockStateType) {

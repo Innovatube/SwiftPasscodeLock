@@ -8,8 +8,12 @@
 
 import UIKit
 
+public protocol PassCodeLockViewControllerDelegate: class {
+    func passcodeLockResetPassword()
+}
+
 public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
-    
+
     public enum LockState {
         case EnterPasscode
         case SetPasscode
@@ -60,7 +64,8 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     internal var isPlaceholdersAnimationCompleted = true
     
     private var shouldTryToAuthenticateWithBiometrics = true
-    
+
+    public weak var delegate: PassCodeLockViewControllerDelegate?
     // MARK: - Initializers
     
     public init(state: PasscodeLockStateType, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
@@ -99,7 +104,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         super.viewDidLoad()
         
         updatePasscodeView()
-        deleteSignButton?.isEnabled = false
+//        deleteSignButton?.isEnabled = false
         setupEvents()
     }
 
@@ -185,7 +190,8 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         passcodeLock.authenticateWithBiometrics()
     }
     @IBAction func resetPassword(_ sender: UIButton) {
-        passcodeLockResetPass()
+        passcodeLock.removePasscodeLock()
+        self.delegate?.passcodeLockResetPassword()
     }
 
         fileprivate func authenticateWithTouchID() {
@@ -229,7 +235,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         descriptionLabel?.text = "パスコードが合致しません"
         descriptionLabel?.textColor = UIColor(red: 204 / 255, green: 0 / 255, blue: 0 / 255, alpha: 1.0)
 
-        deleteSignButton?.isEnabled = false
+//        deleteSignButton?.isEnabled = false
         isPlaceholdersAnimationCompleted = false
         
         animatePlaceholders(placeholders, toState: .Error)
@@ -270,7 +276,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     // MARK: - PasscodeLockDelegate
     
     open func passcodeLockDidSucceed(_ lock: PasscodeLockType) {
-        deleteSignButton?.isEnabled = true
+//        deleteSignButton?.isEnabled = true
         animatePlaceholders(placeholders, toState: .Inactive)
 
         dismissPasscodeLock(lock) { [weak self] in
@@ -291,31 +297,27 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         
         updatePasscodeView()
         animatePlaceholders(placeholders, toState: .Inactive)
-        deleteSignButton?.isEnabled = false
+//        deleteSignButton?.isEnabled = false
     }
     
     public func passcodeLock(_ lock: PasscodeLockType, addedSignAtIndex index: Int) {
         
         animatePlacehodlerAtIndex(index, toState: .Active)
-        deleteSignButton?.isEnabled = true
+//        deleteSignButton?.isEnabled = true
     }
     
     public func passcodeLock(_ lock: PasscodeLockType, removedSignAtIndex index: Int) {
         
         animatePlacehodlerAtIndex(index, toState: .Inactive)
         
-        if index == 0 {
-            
-            deleteSignButton?.isEnabled = false
-        }
+//        if index == 0 {
+
+//            deleteSignButton?.isEnabled = false
+//        }
     }
 
-    public func passcodeLockResetPass() {
-        let alert = UIAlertController(title: "パスコードを忘れた場合は\nアプリを削除して再インストール\nしてください。\n", message: "そのあとログインIDとパスワードで\nログインしていただけば過去のデータを\n維持したままご利用を再開できます。", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "はい", style: .cancel, handler: nil))
-
-        present(alert, animated: true, completion: nil)
-
+    public func passcodeLockResetPass(_ lock: PasscodeLockType) {
+        passcodeLock.resetPassword()
     }
 
 }

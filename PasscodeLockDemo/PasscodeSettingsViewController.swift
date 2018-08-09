@@ -9,7 +9,7 @@
 import UIKit
 import PasscodeLock
 
-class PasscodeSettingsViewController: UIViewController {
+class PasscodeSettingsViewController: UIViewController, PassCodeLockViewControllerDelegate {
     
     @IBOutlet weak var passcodeSwitch: UISwitch!
     @IBOutlet weak var changePasscodeButton: UIButton!
@@ -67,6 +67,7 @@ class PasscodeSettingsViewController: UIViewController {
                 
                 lock.repository.deletePasscode()
             }
+            
         }
         
         present(passcodeVC, animated: true, completion: nil)
@@ -77,8 +78,8 @@ class PasscodeSettingsViewController: UIViewController {
         let repo = UserDefaultsPasscodeRepository()
         let config = PasscodeLockConfiguration(repository: repo)
         
-        let passcodeLock = PasscodeLockViewController(state: .SetPasscode, configuration: config)
-        
+        let passcodeLock = PasscodeLockViewController(state: .ChangePasscode, configuration: config)
+        passcodeLock.delegate = self
         present(passcodeLock, animated: true, completion: nil)
     }
     
@@ -104,5 +105,8 @@ class PasscodeSettingsViewController: UIViewController {
     @IBAction func dismissKeyboard() {
         
         testTextField.resignFirstResponder()
+    }
+
+    func passcodeLockResetPassword() {
     }
 }

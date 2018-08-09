@@ -16,5 +16,5 @@ public protocol PasscodeRepositoryType {
     func savePasscode(_ passcode: [String])
     func check(passcode: [String]) -> Bool
     func deletePasscode()
-    func resetPasscode() 
+    func resetPasscode()
 }
