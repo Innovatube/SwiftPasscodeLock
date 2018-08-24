@@ -26,7 +26,7 @@ struct ResetPasscodeState: PasscodeLockStateType {
     func acceptPasscode(_ passcode: [String], fromLock lock: PasscodeLockType) {
 
         let nextState = ResetPasscodeState()
-        lock.repository.resetPasscode()
+//        lock.repository.resetPasscode()
         lock.changeStateTo(nextState)
 
     }
