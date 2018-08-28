@@ -190,7 +190,6 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         passcodeLock.authenticateWithBiometrics()
     }
     @IBAction func resetPassword(_ sender: UIButton) {
-        passcodeLock.removePasscodeLock()
         self.delegate?.passcodeLockResetPassword()
     }
 
